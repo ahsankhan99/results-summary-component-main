@@ -1,0 +1,238 @@
+// Variables
+
+// Primary Colors
+$light-red: hsl(0, 100%, 67%);
+$orangey-yellow: hsl(39, 100%, 56%);
+$green-teal: hsl(166, 100%, 37%);
+$cobalt-blue: hsl(234, 85%, 45%);
+
+// Primary Backgroud Colors
+$light-red-bg: hsl(0, 100%, 67%, 15%);
+$orangey-yellow-bg: hsl(39, 100%, 56%, 15%);
+$green-teal-bg: hsl(166, 100%, 37%, 15%);
+$cobalt-blue-bg: hsl(234, 85%, 45%, 15%);
+
+// Gradient Colors
+
+$light-slate-blue : hsl(252, 100%, 67%);
+$light-royal-blue : hsl(241, 81%, 54%);
+$violet-blue: hsla(256, 72%, 46%, 1);
+$persian-blue: hsla(241, 72%, 46%, 0);
+
+// Neutral Colors
+
+$white: hsl(0, 0%, 100%);
+$pale-blue: hsl(221, 100%, 96%);
+$light-lavender: hsl(241, 100%, 89%);
+$dark-gray-blue: hsl(224, 30%, 27%);
+
+@font-face {
+    font-family: 'HankenGrotesk';
+    src: url('../assets/fonts/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
+
+}
+
+// General Styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'HankenGrotesk', sans-serif;
+    background: $white;
+    font-size: 18px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.cards {
+    display: flex;
+    height: 500px;
+    padding: 0 1rem;
+}
+
+.result-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2rem;
+    padding: 2rem;
+    background: linear-gradient(to bottom, $light-slate-blue, $light-royal-blue);
+    text-align: center;
+    flex: 1;
+    position: relative;
+    margin-left: -1.5rem;
+    left: 1.5rem;
+    z-index: 2;
+
+    h4 {
+        color: $light-lavender;
+    }
+
+    .circle {
+        background: linear-gradient(to bottom, $violet-blue, $persian-blue);
+        border-radius: 50%;
+        width: 10rem;
+        height: 10rem;
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h1 {
+            font-size: 48px;
+            color: $white;
+        }
+
+        h5 {
+            color: $light-lavender;
+        }
+    }
+
+    h3 {
+        font-size: 24px;
+        color: $pale-blue;
+        margin: 1.5rem 0 1rem 0;
+    }
+
+    h5 {
+        color: $light-lavender;
+        margin: 0 2rem;
+    }
+}
+
+
+.summary-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border-radius: 0 1rem 1rem 0;
+    padding: 2rem 2rem 2rem 3rem;
+    box-shadow: 1px 10px 20px hsla(224, 30%, 27%, .3);
+    color: $dark-gray-blue;
+    position: relative;
+
+
+    h3 {
+        margin-bottom: 1.5rem;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.5rem;
+        margin: 0.5rem 0;
+
+
+        img {
+            margin-right: 0.8rem;
+        }
+    }
+
+    &>div:nth-of-type(1) {
+        background-color: $light-red-bg;
+
+        &>div h4 {
+            color: $light-red;
+            opacity: 100;
+        }
+    }
+
+    &>div:nth-of-type(2) {
+        background-color: $orangey-yellow-bg;
+
+        &>div h4 {
+
+            color: $orangey-yellow;
+        }
+    }
+
+    &>div:nth-of-type(3) {
+        background-color: $green-teal-bg;
+
+        &>div h4 {
+            color: $green-teal;
+        }
+    }
+
+    &>div:nth-of-type(4) {
+        background-color: $cobalt-blue-bg;
+
+        &>div h4 {
+            color: $cobalt-blue;
+        }
+    }
+
+    &>div span {
+        color: $light-lavender;
+    }
+
+    a {
+
+        padding: 0.75rem 1rem;
+        display: inline-block;
+        border-radius: 4rem;
+        text-align: center;
+        color: $white;
+        background: linear-gradient(to bottom, $light-slate-blue, $light-royal-blue);
+        margin-top: 1.5rem;
+    }
+
+    a:hover {
+        background: $dark-gray-blue;
+    }
+
+
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.attribution {
+    text-align: center;
+}
+
+
+@media screen and (max-width: 767px) {
+
+    main {
+        margin: 0;
+        padding: 0;
+        align-items: start;
+    }
+
+    .cards {
+        flex-direction: column;
+        padding: 0;
+        height: 100%;
+    }
+
+    .result-card {
+        border-radius: 0 0 2rem 2rem;
+        background: linear-gradient(to bottom, $light-slate-blue, $light-royal-blue);
+        text-align: center;
+        position: static;
+        margin: 0;
+    }
+
+    .summary-card {
+        padding: 2rem;
+        text-align: center;
+        width: 100%;
+        box-shadow: none;
+    }
+}
